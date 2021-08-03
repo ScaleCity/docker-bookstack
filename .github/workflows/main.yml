@@ -100,5 +100,5 @@ jobs:
         tags: |
           ${{ steps.docker_meta.outputs.tags }}
         labels: ${{ steps.docker_meta.outputs.labels }}
-        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:${{ steps.vars.outputs.sha_short }}
-        cache-to: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:${{ steps.vars.outputs.sha_short }}
+        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
+        cache-to: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
