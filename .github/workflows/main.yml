@@ -87,9 +87,6 @@ jobs:
         registry: registry.scalecity.io
         username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
         password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-    - name: Set outputs
-      id: vars
-      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
     - name: Build and Push
       uses: docker/build-push-action@v2
       with:
@@ -100,5 +97,3 @@ jobs:
         tags: |
           ${{ steps.docker_meta.outputs.tags }}
         labels: ${{ steps.docker_meta.outputs.labels }}
-        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
-        cache-to: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
