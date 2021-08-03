@@ -3,7 +3,7 @@ name: "PR"
 on:
   pull_request:
     branches:
-    - master
+    - main
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
         tags: |
           ${{ steps.docker_meta_ci.outputs.tags }}
         labels: ${{ steps.docker_meta_ci.outputs.labels }}
-        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:master
+        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
         cache-to: type=inline
         outputs: type=docker,dest=/tmp/image-bookstack.tar
     - name: Upload artifact

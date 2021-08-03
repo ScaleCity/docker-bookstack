@@ -29,12 +29,12 @@ jobs:
         tags: |
           ${{ steps.docker_meta_ci.outputs.tags }}
         labels: ${{ steps.docker_meta_ci.outputs.labels }}
-        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:master
+        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
         outputs: type=docker,dest=/tmp/image-bookstack.tar
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp/image-bookstack.tar
   e2e:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp
     - name: Load Docker image
       run: |
@@ -69,7 +69,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp
     - name: Load Docker image
       run: |
@@ -85,7 +85,7 @@ jobs:
         registry: registry.scalecity.io
         username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
         password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-    - name: Build and Push master
+    - name: Build and Push main
       uses: docker/build-push-action@v2
       with:
         context: .

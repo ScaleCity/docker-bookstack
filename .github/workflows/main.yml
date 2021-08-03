@@ -1,9 +1,9 @@
-name: "master"
+name: "main"
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -29,12 +29,12 @@ jobs:
         tags: |
           ${{ steps.docker_meta_ci.outputs.tags }}
         labels: ${{ steps.docker_meta_ci.outputs.labels }}
-        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:master
+        cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
         outputs: type=docker,dest=/tmp/image-bookstack.tar
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp/image-bookstack.tar
         if-no-files-found: warn
   e2e:
@@ -46,7 +46,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp
     - name: Load Docker image
       run: |
@@ -70,7 +70,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: image-bookstack-master
+        name: image-bookstack-main
         path: /tmp
         if-no-files-found: warn
     - name: Load Docker image
