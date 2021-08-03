@@ -1,6 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2020 Niclas Mietz <hi@solidnerd.dev>
+Copyright for portions of project solidnerd/docker-bookstack are held by Niclas Mietz <hi@solidnerd.dev> 2020 as part of project scalecity/docker-bookstack. All other copyright for project scalecity/docker-bookstack are held by Levi Govaerts <levi@scalecity.io>.
+
+Copyright (c) 2021
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
