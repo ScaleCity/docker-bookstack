@@ -1,8 +1,12 @@
+# Forked from [solidnerd/docker-bookstack](https://github.com/SolidNerd/docker-bookstack)
+
+* Updated to 21.05.3
+
 ## Docker Image For [BookStack](https://github.com/ssddanbrown/BookStack)
 
-[![Build Status](https://travis-ci.org/solidnerd/docker-bookstack.svg?branch=master)](https://travis-ci.org/solidnerd/docker-bookstack) [![](https://images.microbadger.com/badges/image/solidnerd/bookstack.svg)](https://microbadger.com/images/solidnerd/bookstack "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/solidnerd/bookstack.svg)](https://microbadger.com/images/solidnerd/bookstack "Get your own commit badge on microbadger.com") [![](https://images.microbadger.com/badges/version/solidnerd/bookstack.svg)](https://microbadger.com/images/solidnerd/bookstack "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/license/solidnerd/bookstack.svg)](https://microbadger.com/images/solidnerd/bookstack "Get your own license badge on microbadger.com")
+[![Build Status](https://travis-ci.org/scalecity/docker-bookstack.svg?branch=master)](https://travis-ci.org/scalecity/docker-bookstack) [![](https://images.microbadger.com/badges/image/scalecity/bookstack.svg)](https://microbadger.com/images/scalecity/bookstack "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/scalecity/bookstack.svg)](https://microbadger.com/images/scalecity/bookstack "Get your own commit badge on microbadger.com") [![](https://images.microbadger.com/badges/version/scalecity/bookstack.svg)](https://microbadger.com/images/scalecity/bookstack "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/license/scalecity/bookstack.svg)](https://microbadger.com/images/scalecity/bookstack "Get your own license badge on microbadger.com")
 
-## Current Version: [21.05.2](https://github.com/SolidNerd/docker-bookstack/blob/master/Dockerfile)
+## Current Version: [21.05.3](https://github.com/ScaleCity/docker-bookstack/blob/master/Dockerfile)
 
 ### Changes
 
@@ -21,7 +25,7 @@ and after that open your Browser and go to [http://localhost:8080](http://localh
 
 ### Issues
 
-If you have any issues feel free to create an [issue on GitHub](https://github.com/solidnerd/docker-bookstack/issues).
+If you have any issues feel free to create an [issue on GitHub](https://github.com/ScaleCity/docker-bookstack/issues).
 
 
 ### How to use the Image without Docker compose
@@ -49,8 +53,8 @@ mysql:5.7.21
 ```bash
 docker run -d --link bookstack_db_:mysql \
 -p 8080:8080 \
---name bookstack_21.05.2 \
-solidnerd/bookstack:21.05.2
+--name bookstack_21.05.3 \
+registry.scalecity.io/opensource/bookstack:21.05.3
 ```
 
 #### Docker 1.9+
@@ -82,8 +86,8 @@ docker run -d --net bookstack_nw \
 -e DB_USERNAME=bookstack \
 -e DB_PASSWORD=secret \
 -p 8080:8080 \
---name="bookstack_21.05.2" \
- solidnerd/bookstack:21.05.2
+--name="bookstack_21.05.3" \
+ registry.scalecity.io/opensource/bookstack:21.05.3
 ```
 
 #### Volumes

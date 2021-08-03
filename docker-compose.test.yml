@@ -16,7 +16,7 @@ services:
     - mysql-data:/var/lib/mysql
 
   bookstack:
-    image: ${BOOKSTACK_IMAGE:-solidnerd/bookstack}
+    image: ${BOOKSTACK_IMAGE:-registry.scalecity.io/opensource/bookstack}
     depends_on:
     - mysql
     environment:
@@ -28,7 +28,7 @@ services:
     - uploads:/var/www/bookstack/public/uploads
     - storage-uploads:/var/www/bookstack/storage/uploads
     ports:
-    - "8080:80"
+    - "8181:80"
 
 volumes:
  mysql-data:
