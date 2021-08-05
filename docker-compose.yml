@@ -1,7 +1,7 @@
 version: '2'
 services:
   mysql:
-    image: mysql:5.7.33
+    image: mysql:5.7.35
     environment:
     - MYSQL_ROOT_PASSWORD=secret
     - MYSQL_DATABASE=bookstack
@@ -11,7 +11,7 @@ services:
     - mysql-data:/var/lib/mysql
 
   bookstack:
-    image: registry.scalecity.io/opensource/bookstack:21.05.3
+    image: registry.scalecity.io/opensource/bookstack:latest
     depends_on:
     - mysql
     environment:
