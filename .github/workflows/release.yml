@@ -37,7 +37,7 @@ jobs:
         cache-from: type=registry,ref=registry.scalecity.io/opensource/bookstack-dev:main
         outputs: type=docker,dest=/tmp/image-bookstack.tar
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: image-bookstack-main
         path: /tmp/image-bookstack.tar
